@@ -1,9 +1,9 @@
-class CreateTexts < ActiveRecord::Migration[6.1]
+class CreateMovies < ActiveRecord::Migration[6.1]
   def change
-    create_table :texts do |t|
+    create_table :movies do |t|
       t.integer :genre, null: false, default: 0
       t.string :title, null: false
-      t.text :content, null: false
+      t.string :url, null: false
 
       t.timestamps
     end
