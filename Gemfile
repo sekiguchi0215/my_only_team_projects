@@ -14,11 +14,11 @@ gem "webpacker", "~> 5.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "pry-byebug"
+  gem "pry-doc"
+  gem "pry-rails"
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
-  gem "pry-byebug"
-  gem "pry-rails"
-  gem "pry-doc"
 end
 
 group :development do
