@@ -5,9 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "csv"
+
 
 %w[texts movies].each do |table_name|
   ActiveRecord::Base.connection.execute("TRUNCATE TABLE #{table_name} RESTART IDENTITY CASCADE")
+end
+
+CSV.foreach("db/csv_data/text_data.csv", headers: true) do |row|
+  Text.create(
+    genre: row["genre"],
+    title: row["title"],
+    content: row["content"]
+  )
 end
 
 email = "test@example.com"
