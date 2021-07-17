@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+%w[texts movies].each do |table_name|
+  ActiveRecord::Base.connection.execute("TRUNCATE TABLE #{table_name} RESTART IDENTITY CASCADE")
+end
+
 email = "test@example.com"
 password = "password"
 
@@ -13,3 +17,4 @@ User.find_or_create_by!(email: email) do |user|
   user.password = password
   puts "ユーザーの初期データインポートに成功しました。"
 end
+
