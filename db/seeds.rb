@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "csv"
 
-
 %w[texts movies].each do |table_name|
   ActiveRecord::Base.connection.execute("TRUNCATE TABLE #{table_name} RESTART IDENTITY CASCADE")
 end
@@ -19,6 +18,16 @@ CSV.foreach("db/csv_data/text_data.csv", headers: true) do |row|
     content: row["content"]
   )
 end
+puts "テキスト教材データの投入に成功しました。"
+
+CSV.foreach("db/csv_data/movie_data.csv", headers: true) do |row|
+  Movie.create(
+    genre: row["genre"],
+    title: row["title"],
+    url: row["url"]
+  )
+end
+puts "動画教材データの投入に成功しました。"
 
 email = "test@example.com"
 password = "password"
