@@ -1,5 +1,7 @@
 class TextsController < ApplicationController
-  def index; end
+  def index
+    @texts = Text.all
+  end
 
   def show; end
 end
