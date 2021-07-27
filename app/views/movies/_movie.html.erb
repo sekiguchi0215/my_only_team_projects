@@ -1,0 +1,14 @@
+<div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 1rem;">
+  <div class="card card-style">
+    <div class="card-header p-0">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe src="<%= movie.url %>" frameborder="0" class="img-fluid"></iframe>
+      </div>
+    </div>
+    <div class="card-body text-card-body">
+      <a href="#" class="btn btn-secondary btn-block">視聴済みにする</a>
+      <p class="card-text" style="margin-top: 20px;">Lv.<%= movie_counter + 1 %> <%= movie.title %></p>
+      <p>【<%= movie.genre_i18n %>】</p>
+    </div>
+  </div>
+</div>
