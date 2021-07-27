@@ -1,2 +1,6 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<h1 class="text-center" style="margin-bottom: 2rem;">Ruby/Rails 動画</h1>
+<div class="container">
+  <div class="row row-cols-3">
+    <%= render partial: "movie", collection: @movies %>
+  </div>
+</div>
