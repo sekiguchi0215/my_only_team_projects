@@ -36,7 +36,7 @@ ActiveAdmin.register Movie do
   form do |f|
     f.semantic_errors
     f.inputs do
-      input :genre, as: :select, collection: Movie.genre_i18n.invert
+      input :genre, as: :select, collection: Movie.genres_i18n.invert
       input :title
       input :url
     end
