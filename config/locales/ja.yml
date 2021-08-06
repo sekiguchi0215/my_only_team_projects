@@ -8,3 +8,12 @@ ja:
     title: タイトル
     content: テキスト
     url: URL
+    id: ID
+    namespace: 名前空間
+    body: コメント内容
+    resource_type: リソースタイプ
+    resource_id: リソースID
+    author_type: 著者タイプ
+    author_id: 著者ID
+    created_at: 作成日時
+    updated_at: 更新日時
