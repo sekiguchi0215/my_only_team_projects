@@ -15,7 +15,7 @@ CSV.foreach("db/csv_data/text_data.csv", headers: true) do |row|
   Text.create(
     genre: row["genre"],
     title: row["title"],
-    content: row["content"]
+    content: row["content"],
   )
 end
 puts "テキスト教材データの投入に成功しました。"
@@ -24,7 +24,7 @@ CSV.foreach("db/csv_data/movie_data.csv", headers: true) do |row|
   Movie.create(
     genre: row["genre"],
     title: row["title"],
-    url: row["url"]
+    url: row["url"],
   )
 end
 puts "動画教材データの投入に成功しました。"
@@ -34,6 +34,12 @@ password = "password"
 
 User.find_or_create_by!(email: email) do |user|
   user.password = password
-  puts "ユーザーの初期データインポートに成功しました。"
+  puts "ユーザーの初期データの投入に成功しました。"
 end
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+admin_email = "admin@example.com"
+
+AdminUser.find_or_create_by!(email: admin_email) do |user|
+  user.password = password
+  puts "管理者ユーザーの初期データの投入に成功しました。"
+end
