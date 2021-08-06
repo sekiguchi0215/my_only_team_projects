@@ -3,8 +3,24 @@ ja:
     models:
       text: テキスト教材
       movie: 動画教材
+    attributes:
+      genre:
+        invisible: 非表示
+        basic: Basic
+        git: Git
+        ruby: Ruby
+        rails: Ruby on Rails
+        php: PHP
   attributes:
     genre: ジャンル
     title: タイトル
     content: テキスト
     url: URL
+    id: ID
+    namespace: 名前空間
+    resource_type: リソースタイプ
+    resource_id: リソースID
+    author_type: 著者タイプ
+    author_id: 著者ID
+    created_at: 作成日時
+    update_at: 更新日時
