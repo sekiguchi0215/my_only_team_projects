@@ -1,12 +1,14 @@
 <div class="col-12 col-md-6 col-lg-4 text-card-container">
-  <div class="card card-style">
-    <div class="card-header p-0">
-      <img class="card-img-top img-fluid" src="https://d5izmuz0mcjzz.cloudfront.net/texts/no_image.jpg" alt="no-image">
+  <%= link_to text_path(text) do %>
+    <div class="card card-style">
+      <div class="card-header p-0">
+        <img class="card-img-top img-fluid" src="https://d5izmuz0mcjzz.cloudfront.net/texts/no_image.jpg" alt="no-image">
+      </div>
+      <div class="card-body text-card-body">
+        <a href="#" class="btn btn-secondary btn-block">読破済みにする</a>
+        <p class="card-text" style="margin-top: 20px;"><%= text.title %></p>
+        <p>【<%= text.genre_i18n %>】</p>
+      </div>
     </div>
-    <div class="card-body text-card-body">
-      <a href="#" class="btn btn-secondary btn-block">読破済みにする</a>
-      <p class="card-text" style="margin-top: 20px;"><%= text.title %></p>
-      <p>【<%= text.genre_i18n %>】</p>
-    </div>
-  </div>
+  <% end %>
 </div>
