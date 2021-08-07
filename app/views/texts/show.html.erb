@@ -1,2 +1,6 @@
-<h1 class="text-center" style="margin-bottom: 30px;"><%= @text.title %></h1>
-<%= @text.content %>
+<h1 class="text-center" style="margin-bottom: 30px;">
+  <%= @text.title %>
+</h1>
+<div class="markdown">
+  <%= markdown(@text.content) %>
+</div>
