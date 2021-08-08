@@ -1,10 +1,10 @@
 class TextsController < ApplicationController
   def index
-    if params[:genre] == "php"
-      @texts = Text.where(genre: Text::PHP_GENRE_LIST)
-    else
-      @texts = Text.where(genre: Text::RAILS_GENRE_LIST)
-    end
+    @texts = if params[:genre] == "php"
+               Text.where(genre: Text::PHP_GENRE_LIST)
+             else
+               Text.where(genre: Text::RAILS_GENRE_LIST)
+             end
   end
 
   def show
