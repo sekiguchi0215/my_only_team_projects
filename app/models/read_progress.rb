@@ -3,6 +3,6 @@ class ReadProgress < ApplicationRecord
   belongs_to :text
 
   validates :user_id, uniqueness: {
-              scope: :text_id,
-            }
+    scope: :text_id
+  }
 end
