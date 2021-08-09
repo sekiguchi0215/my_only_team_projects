@@ -18,4 +18,8 @@ class Text < ApplicationRecord
 
   RAILS_GENRE_LIST = %w[basic git ruby rails].freeze
   PHP_GENRE_LIST = %w[php].freeze
+
+  def read_progress_by?(user)
+    read_progresses.exists?(user_id: user.id)
+  end
 end
