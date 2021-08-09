@@ -5,11 +5,13 @@
         <img class="card-img-top img-fluid" src="https://d5izmuz0mcjzz.cloudfront.net/texts/no_image.jpg" alt="no-image">
       </div>
       <div class="card-body text-card-body">
-        <% if text.read_progress_by?(current_user) %>
-          <%= link_to "読破済みを解除", text_read_progresses_path(text), method: :delete, class: "btn btn-primary btn-block" %>
-        <% else %>
-          <%= link_to "読破済みにする", text_read_progresses_path(text), method: :post, class: "btn btn-secondary btn-block" %>
-        <% end %>
+        <p id="text-<%= text.id %>">
+          <% if text.read_progress_by?(current_user) %>
+            <%= render "read_progress", text: text %>
+          <% else %>
+            <%= render "disread_progress", text: text %>
+          <% end %>
+        </p>
         <p class="card-text" style="margin-top: 20px;"><%= text.title %></p>
         <p>【<%= text.genre_i18n %>】</p>
       </div>
