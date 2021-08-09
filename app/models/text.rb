@@ -5,6 +5,8 @@ class Text < ApplicationRecord
     validates :content
   end
 
+  has_many :read_progresses, dependent: :destroy
+
   enum genre: {
     invisible: 0,
     basic: 1,
@@ -16,4 +18,8 @@ class Text < ApplicationRecord
 
   RAILS_GENRE_LIST = %w[basic git ruby rails].freeze
   PHP_GENRE_LIST = %w[php].freeze
+
+  def read_progress_by?(user)
+    read_progresses.any? { |read_progress| read_progress.user_id == user.id }
+  end
 end

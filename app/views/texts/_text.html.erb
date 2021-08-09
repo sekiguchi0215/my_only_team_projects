@@ -5,7 +5,13 @@
         <img class="card-img-top img-fluid" src="https://d5izmuz0mcjzz.cloudfront.net/texts/no_image.jpg" alt="no-image">
       </div>
       <div class="card-body text-card-body">
-        <a href="#" class="btn btn-secondary btn-block">読破済みにする</a>
+        <p id="text-<%= text.id %>">
+          <% if text.read_progress_by?(current_user) %>
+            <%= render "read_progress", text: text %>
+          <% else %>
+            <%= render "disread_progress", text: text %>
+          <% end %>
+        </p>
         <p class="card-text" style="margin-top: 20px;"><%= text.title %></p>
         <p>【<%= text.genre_i18n %>】</p>
       </div>

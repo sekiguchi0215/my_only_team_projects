@@ -3,7 +3,10 @@ ja:
     models:
       text: テキスト教材
       movie: 動画教材
+      read_progress: 読破済み
   attributes:
+    user: ユーザー
+    text: テキスト教材
     genre: ジャンル
     title: タイトル
     content: テキスト
