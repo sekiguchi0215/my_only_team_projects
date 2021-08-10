@@ -6,7 +6,11 @@
       </div>
     </div>
     <div class="card-body text-card-body">
-      <a href="#" class="btn btn-secondary btn-block">視聴済みにする</a>
+      <% if movie.watch_progressed_by?(current_user) %>
+        <%= link_to "視聴済みを解除", movie_watch_progresses_path(movie), method: :delete, class: "btn btn-primary btn-block" %>
+      <% else %>
+        <%= link_to "視聴済みにする", movie_watch_progresses_path(movie), method: :post, class: "btn btn-secondary btn-block" %>
+      <% end %>
       <p class="card-text" style="margin-top: 20px;">Lv.<%= movie_counter + 1 + @movies.offset_value %> <%= movie.title %></p>
       <p>【<%= movie.genre_i18n %>】</p>
     </div>
