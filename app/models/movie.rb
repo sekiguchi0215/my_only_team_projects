@@ -13,7 +13,7 @@ class Movie < ApplicationRecord
     git: 2,
     ruby: 3,
     rails: 4,
-    php: 5,
+    php: 5
   }
 
   RAILS_GENRE_LIST = %w[basic git ruby rails].freeze

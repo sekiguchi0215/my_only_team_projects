@@ -3,6 +3,6 @@ class WatchProgress < ApplicationRecord
   belongs_to :movie
 
   validates :user_id, uniqueness: {
-                        scope: :movie_id,
-                      }
+    scope: :movie_id
+  }
 end
