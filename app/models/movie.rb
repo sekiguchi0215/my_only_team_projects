@@ -20,6 +20,6 @@ class Movie < ApplicationRecord
   PHP_GENRE_LIST = %w[php].freeze
 
   def watch_progressed_by?(user)
-    watch_progresses.exists?(user_id: user.id)
+    watch_progresses.any? { |watch_progress| watch_progress.user_id = user.id }
   end
 end
