@@ -7,6 +7,7 @@ ja:
   attributes:
     user: ユーザー
     text: テキスト教材
+    movie: 動画教材
     genre: ジャンル
     title: タイトル
     content: テキスト

@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :rememberable, :validatable
 
   has_many :read_progresses, dependent: :destroy
+  has_many :watch_progresses, dependent: :destroy
 
   def self.guest
     find_or_create_by!(email: "guest@example.com") do |user|
